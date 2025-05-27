@@ -1,2 +1,3 @@
-# 100-days-of-code
-My daily coding practice and projects
+# 100 Days of Code
+
+This repository tracks my daily coding progress and projects as I learn web development.
