@@ -2,7 +2,7 @@
 
 This repository tracks my daily coding progress and projects as I learn web development.
 
-## Day 1 - 2025-05-28
+## 🌟 Progress
 
-- Compleated HTML
-- Created my first resume webpage.
+- [Day 1 – HTML Resume Project](Day01-HTML-Resume/)
+- [Day 2 – CSS Intro & Colour Vocab Website](Day02-CSS-Intro/)
