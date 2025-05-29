@@ -7,3 +7,5 @@ This repository tracks my daily coding progress and projects as I learn web deve
 - [Day 1 – HTML Resume Project](Day01-HTML-Resume/)
   
 - [Day 2 – CSS Intro & Colour Vocab Website](Day02-CSS-Intro/)
+
+- [Day 3 – CSS Properties & Motivational Poster Project](Day03-CSS-Properties/)
