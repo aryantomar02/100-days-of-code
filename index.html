@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>100 Days of Code - Aryan Tomar</title>
   <style>
+    /* Base styles */
     body {
       font-family: Arial, sans-serif;
       max-width: 700px;
@@ -12,11 +13,14 @@
       padding: 0 20px;
       background: #f5f5f5;
       color: #333;
+      transition: background 0.3s, color 0.3s;
     }
+
     header {
       text-align: center;
       margin-bottom: 40px;
     }
+
     a {
       color: #0077cc;
       text-decoration: none;
@@ -24,91 +28,331 @@
     a:hover {
       text-decoration: underline;
     }
+
     h1 {
       margin-bottom: 10px;
     }
+
+    /* Section styling */
     section {
       background: white;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 5px #ccc;
       margin-bottom: 20px;
+      transition: background 0.3s, color 0.3s;
     }
+
     hr {
       margin: 40px 0;
       border: none;
       border-top: 1px solid #ccc;
+      transition: border-color 0.3s;
     }
+
     footer {
       text-align: center;
       margin-top: 40px;
       color: #666;
+      transition: color 0.3s;
+    }
+
+    /* Collapsible day content */
+    .day-content {
+      max-height: 1000px; /* big enough for content */
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .day-content.collapsed {
+      max-height: 0;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    /* Clickable day header */
+    .day-header {
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .day-header:hover {
+      color: #0077cc;
+    }
+
+    /* Arrow for toggle */
+    .arrow {
+      border: solid #0077cc;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 5px;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+      margin-left: 10px;
+    }
+
+    .collapsed .arrow {
+      transform: rotate(-45deg);
+    }
+
+    /* Sidebar navigation */
+    nav {
+      position: fixed;
+      top: 50px;
+      right: 10px;
+      width: 180px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      font-size: 14px;
+      max-height: 80vh;
+      overflow-y: auto;
+      transition: background 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    nav h3 {
+      margin-top: 0;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    nav a {
+      display: block;
+      margin-bottom: 8px;
+      color: #0077cc;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Dark mode styles */
+    body.dark {
+      background: #121212;
+      color: #e0e0e0;
+    }
+    body.dark section {
+      background: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 0 10px #222;
+    }
+    body.dark hr {
+      border-top-color: #444;
+    }
+    body.dark footer {
+      color: #888;
+    }
+    body.dark nav {
+      background: #222;
+      border-color: #444;
+      color: #ccc;
+    }
+    body.dark nav a {
+      color: #66aaff;
+    }
+    body.dark nav a:hover {
+      text-decoration: underline;
+    }
+    body.dark .day-header:hover {
+      color: #66aaff;
+    }
+    body.dark .arrow {
+      border-color: #66aaff;
+    }
+
+    /* Dark mode toggle button */
+    #darkModeToggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #0077cc;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      z-index: 1000;
+    }
+    #darkModeToggle:hover {
+      background: #005fa3;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 800px) {
+      nav {
+        position: static;
+        width: 100%;
+        max-height: none;
+        margin-bottom: 20px;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+      }
+      #darkModeToggle {
+        position: static;
+        margin-bottom: 20px;
+      }
+      body {
+        max-width: 95%;
+        margin: 20px auto;
+        padding: 0 10px;
+      }
     }
   </style>
 </head>
 <body>
+  <button id="darkModeToggle" aria-pressed="false">Dark Mode</button>
+
   <header>
     <h1>100 Days of Code Challenge</h1>
     <p>Tracking my daily progress in learning web development and programming.</p>
   </header>
 
-  <section>
-    <h2>About This Project</h2>
-    <p>
-      This repository contains my notes, projects, and progress updates as I work through the 100 Days of Code challenge.
-    </p>
-  </section>
+  <nav aria-label="Day navigation">
+    <h3>Jump to Day</h3>
+    <a href="#day1">Day 1</a>
+    <a href="#day2">Day 2</a>
+    <a href="#day3">Day 3</a>
+    <a href="#day4">Day 4</a>
+  </nav>
 
-  <section>
-    <h2>Latest Updates</h2>
-    <ul>
-      <li><strong>Day 1 - 2025-05-28:</strong> Learned HTML semantic tags and created my resume page.</li>
-      <!-- Add more daily updates here -->
-    </ul>
+  <section id="day1">
+    <div class="day-header" tabindex="0" role="button" aria-expanded="true" aria-controls="content-day1">
+      <h2>Day 1 – HTML Semantic Tags & Resume Page</h2>
+      <span class="arrow"></span>
+    </div>
+    <div class="day-content" id="content-day1">
+      <p><strong>Summary:</strong> Learned HTML semantic tags and created my resume page.</p>
+    </div>
   </section>
 
   <section id="day2">
-    <h2>Day 2 – CSS Intro & Colour Vocab Website</h2>
-    <ul>
-      <li>✅ Why CSS is needed</li>
-      <li>✅ How to add CSS (inline, internal, external)</li>
-      <li>✅ CSS Selectors</li>
-      <li>✅ Colour Vocab Website Project</li>
-      <li>✅ Took the CSS Quiz</li>
-    </ul>
-    <p><strong>Reflection:</strong> CSS is fun and powerful. I’m excited to use it on my resume!</p>
+    <div class="day-header" tabindex="0" role="button" aria-expanded="true" aria-controls="content-day2">
+      <h2>Day 2 – CSS Intro & Colour Vocab Website</h2>
+      <span class="arrow"></span>
+    </div>
+    <div class="day-content" id="content-day2">
+      <ul>
+        <li>✅ Why CSS is needed</li>
+        <li>✅ How to add CSS (inline, internal, external)</li>
+        <li>✅ CSS Selectors</li>
+        <li>✅ Colour Vocab Website Project</li>
+        <li>✅ Took the CSS Quiz</li>
+      </ul>
+      <p><strong>Reflection:</strong> CSS is fun and powerful. I’m excited to use it on my resume!</p>
+    </div>
   </section>
-  <hr />
 
   <section id="day3">
-    <h2>Day 3 – CSS Properties & Poster Project</h2>
-    <ul>
-      <li>✅ Learned about CSS Colours</li>
-      <li>✅ Explored Font Properties</li>
-      <li>✅ Practiced using browser tools to Inspect CSS</li>
-      <li>✅ Understood the Box Model: Margin, Padding, and Border</li>
-      <li>✅ Completed the Motivational Poster Project</li>
-    </ul>
-    <p><strong>Reflection:</strong> Today I built a fun motivational poster using various CSS properties. I'm getting comfortable with how fonts, colors, and spacing all work together to create better design!</p>
+    <div class="day-header" tabindex="0" role="button" aria-expanded="true" aria-controls="content-day3">
+      <h2>Day 3 – CSS Properties & Poster Project</h2>
+      <span class="arrow"></span>
+    </div>
+    <div class="day-content" id="content-day3">
+      <ul>
+        <li>✅ Learned about CSS Colours</li>
+        <li>✅ Explored Font Properties</li>
+        <li>✅ Practiced using browser tools to Inspect CSS</li>
+        <li>✅ Understood the Box Model: Margin, Padding, and Border</li>
+        <li>✅ Completed the Motivational Poster Project</li>
+      </ul>
+      <p><strong>Reflection:</strong> Today I built a fun motivational poster using various CSS properties. I'm getting comfortable with how fonts, colors, and spacing all work together to create better design!</p>
+    </div>
   </section>
-  <hr />
 
   <section id="day4">
-    <h2>Day 4 – CSS Deep Dive</h2>
-    <ul>
-      <li>✅ The Cascade: Specificity and Inheritance</li>
-      <li>✅ Combining CSS Selectors</li>
-      <li>✅ CSS Positioning</li>
-      <li>✅ Project: CSS Flag</li>
-    </ul>
-    <p>
-      Learned about how CSS specificity and inheritance work, how to combine selectors, and different types of positioning (static, relative, absolute, fixed, sticky). Completed a fun CSS flag project using only code!
-    </p>
+    <div class="day-header" tabindex="0" role="button" aria-expanded="true" aria-controls="content-day4">
+      <h2>Day 4 – CSS Deep Dive</h2>
+      <span class="arrow"></span>
+    </div>
+    <div class="day-content" id="content-day4">
+      <ul>
+        <li>✅ The Cascade: Specificity and Inheritance</li>
+        <li>✅ Combining CSS Selectors</li>
+        <li>✅ CSS Positioning</li>
+        <li>✅ Project: CSS Flag</li>
+      </ul>
+      <p>
+        Learned about how CSS specificity and inheritance work, how to combine selectors, and different types of positioning (static, relative, absolute, fixed, sticky). Completed a fun CSS flag project using only code!
+      </p>
+    </div>
   </section>
-  <hr />
 
   <footer>
     <p>&copy; 2025 Aryan Tomar</p>
   </footer>
+
+  <script>
+    // Collapsible days
+    document.querySelectorAll('.day-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const isCollapsed = content.classList.contains('collapsed');
+
+        if (isCollapsed) {
+          content.classList.remove('collapsed');
+          header.setAttribute('aria-expanded', 'true');
+          header.querySelector('.arrow').style.transform = 'rotate(45deg)';
+        } else {
+          content.classList.add('collapsed');
+          header.setAttribute('aria-expanded', 'false');
+          header.querySelector('.arrow').style.transform = 'rotate(-45deg)';
+        }
+      });
+
+      // Allow keyboard toggling (Enter and Space)
+      header.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        }
+      });
+    });
+
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    // Check localStorage for theme preference
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark');
+      darkModeToggle.textContent = 'Light Mode';
+      darkModeToggle.setAttribute('aria-pressed', 'true');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      if (body.classList.contains('dark')) {
+        body.classList.remove('dark');
+        darkModeToggle.textContent = 'Dark Mode';
+        darkModeToggle.setAttribute('aria-pressed', 'false');
+        localStorage.setItem('darkMode', 'disabled');
+      } else {
+        body.classList.add('dark');
+        darkModeToggle.textContent = 'Light Mode';
+        darkModeToggle.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('darkMode', 'enabled');
+      }
+    });
+
+    // Smooth scrolling for nav links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
