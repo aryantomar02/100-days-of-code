@@ -11,3 +11,5 @@ This repository tracks my daily coding progress and projects as I learn web deve
 - [Day 5 – CSS Box Model and Display](Day05-Box-Model/)
 - [Day 6 – Flexbox Layout](Day06-Flexbox/)
 - [Day 7 – CSS Grid & Mondrian Project](Day07-Grid/)
+- [Day 8 – Bootstrap & TinDog Project](Day08-Bootstrap-TinDog/)
+
