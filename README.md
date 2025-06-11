@@ -16,3 +16,4 @@ This repository tracks my daily coding progress and projects as I learn web deve
 - [Day 10 – Personal Portfolio Project (Part 2)](https://aryantomar02.github.io/My-Profile/)
 - [Day 11 – JavaScript Functions & Challenges Wrap-up](Day11-JS-Functions-Final/)
 - [Day 12 – Intermediate JavaScript (If-Else, Arrays, Challenges)](Day12-Intermediate-JS/)
+- [Day 13 – DOM Basics and Manipulating HTML with JavaScript](Day13-DOM-and-JS/)
