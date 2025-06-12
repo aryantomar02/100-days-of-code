@@ -17,4 +17,6 @@ This repository tracks my daily coding progress and projects as I learn web deve
 - [Day 11 – JavaScript Functions & Challenges Wrap-up](Day11-JS-Functions-Final/)
 - [Day 12 – Intermediate JavaScript (If-Else, Arrays, Challenges)](Day12-Intermediate-JS/)
 - [Day 13 – DOM Basics and Manipulating HTML with JavaScript](Day13-DOM-and-JS/)
-- [Day 14: Learned DOM Manipulation and built the Dicee Game] [Live Site](https://aryantomar02.github.io/Dice-game/)
+- [Day 14: Learned DOM Manipulation and built the Dicee Game -Live Site](https://aryantomar02.github.io/Dice-game/)
+- [Day 15 - Completed Drum Kit Project using advanced JavaScript concepts like event listeners, keyboard interaction, and sound playback.](https://aryantomar02.github.io/Drum-Kit/)
+
