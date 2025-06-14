@@ -20,4 +20,4 @@ This repository tracks my daily coding progress and projects as I learn web deve
 - [Day 14: Learned DOM Manipulation and built the Dicee Game -Live Site](https://aryantomar02.github.io/Dice-game/)
 - [Day 15 - Completed Drum Kit Project using advanced JavaScript concepts like event listeners, keyboard interaction, and sound playback.](https://aryantomar02.github.io/Drum-Kit/)
 - [Day 16: Completed the full Simon Game with sound, animations, and pattern logic. Live Demo](https://aryantomar02.github.io/Simon_Game/)
-- [Day 17 - Learned Unix command line basics using Git Bash and reviewed the Simon Game project deployment.]
+- [Day 17 - Learned Unix command line basics using Git Bash and reviewed the Simon Game project deployment.](Day17)
