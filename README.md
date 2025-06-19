@@ -23,3 +23,4 @@ This repository tracks my daily coding progress and projects as I learn web deve
 - [Day 17 - Learned Unix command line basics using Git Bash and reviewed the Simon Game project deployment.](Day17)
 - [Day 18 - Completed the Unix Command Line section, explored backend web development fundamentals, and got introduced to Node.js basics.](Day18)
 - [Day 19 - Completed Node.js section including QR Code Generator project using native modules and external packages like `inquirer` and `qr-image`.](Day19)
+- [Day 20 – Created a Weather API CLI project using Node.js with prompt-sync and OpenWeatherMap.](Day20-Weather-CLI/)
